@@ -17,11 +17,8 @@ class Controller extends BaseController
     public function home(){
         return view('home');
     }
-    public function mahasiswa(){
-        $data =[
-            ['nama' => 'Andi', 'nim' => '12345', 'jurusan' => 'Informatika'],
-            ['nama' => 'Budi', 'nim' => '67890', 'jurusan' => 'Sistem Informasi'],
-            ['nama' => 'Citra', 'nim' => '11223', 'jurusan' => 'Teknik Komputer']];
-        return view('mahasiswa')->with('data', $data);
+    public function siswa(){
+        $data =[];
+        return view('siswa')->with('data', $data);
     }
 }

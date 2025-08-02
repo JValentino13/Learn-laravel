@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[Controller::class, 'index'])-> name('welcome');
 Route::get('/home', [Controller::class, 'home'])-> name('home');
-Route::get('/mahasiswa', [Controller::class, 'mahasiswa'])-> name('mahasiswa');
+Route::get('/siswa', [Controller::class, 'siswa'])-> name('siswa');
