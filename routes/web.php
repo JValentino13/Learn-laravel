@@ -16,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[Controller::class, 'index'])-> name('welcome');
 Route::get('/home', [Controller::class, 'home'])-> name('home');
-Route::get('/siswa', [Controller::class, 'siswa'])-> name('siswa');
+Route::get('/komentar', [Controller::class, 'komentar'])-> name('komentar');
+Route::post('/komentar/simpan', [Controller::class, 'simpan'])->name('simpan');
+Route::get('/komentar/{id}', [Controller::class, 'hapus'])->name('hapus');

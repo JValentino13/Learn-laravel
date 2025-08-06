@@ -12,15 +12,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $table = 'users';
-    protected $fillable = [
-        'name',
-        'nisn',
-        'kelas',
-    ];
-    protected $hidden = [
-    ];
+    protected $table = 'komen';
 
-    const CREATED_AT = 'creation_at';
-    const UPDATED_AT = 'updated_at';
+    protected $fillable = ['komentar'];
+     public $timestamps = false;
 }
