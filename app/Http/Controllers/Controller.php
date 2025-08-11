@@ -27,6 +27,9 @@ class Controller extends BaseController
     }
 
     public function simpan(Request $request){
+        $request->validate([
+            'komentar' => 'required',
+        ]);
         DB::table('komen')->insert([
             'komentar' => $request->komentar
         ]);
