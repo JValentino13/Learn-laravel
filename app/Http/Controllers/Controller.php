@@ -18,9 +18,6 @@ class Controller extends BaseController
     public function index(){
         return view('welcome');
     }
-    public function home(){
-        return view('home');
-    }
     public function komentar(){
         $komen = User::all('komentar','id');
         return view('komentar', compact('komen'));
@@ -29,6 +26,7 @@ class Controller extends BaseController
     public function simpan(Request $request){
         $request->validate([
             'komentar' => 'required',
+
         ]);
         DB::table('komen')->insert([
             'komentar' => $request->komentar
