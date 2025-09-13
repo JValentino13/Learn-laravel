@@ -1,12 +1,17 @@
-@extends('layouts.app')
-
-@section('content')
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <style>
         /* Reset body styles — assume they're already set in app.blade.php */
         html,
         body {
             margin: 0;
-            padding: 20px;
+            padding-top: 10px;
+            padding-right: 25px;
             height: 100%;
             width: 100%;
             scroll-behavior: smooth;
@@ -215,7 +220,8 @@
             }
         }
     </style>
-
+  </head>
+  <body>
     <!-- Page Content -->
     <div class="page-container">
         <!-- Floating Icons -->
@@ -318,4 +324,5 @@
             }
         });
     </script>
-@endsection
+ </body>
+  </html>

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\product;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -20,7 +22,7 @@ class Controller extends BaseController
     }
     public function komentar(){
         $komen = User::all('komentar','id');
-        return view('komentar', compact('komen'));
+        return view('users.komentar', compact('komen'));
     }
 
     public function simpan(Request $request){
@@ -37,5 +39,33 @@ class Controller extends BaseController
     public function hapus($id){
         User::destroy($id);
         return redirect()->back();
+    }
+
+    public function storeProduct(Request $prodimg, $prodname, $proddesc, $prodtype) {
+        $prodimg->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+        ]);
+        $prodname->validate([
+            'product' => 'required',
+        ]);
+        $proddesc->validate([
+            'description' => 'required',
+        ]);
+        $prodtype->validate([
+            'type' => 'required',
+        ]);
+
+        if ($prodimg->hasFile('image')) {
+            $file = $prodimg->file('image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $path = $file->storeAs('public/images', $filename); // Saves to storage/app/public/images
+            product::create(['image_path' => $filename]);
+
+            return back()->with('success', 'Image uploaded successfully!');
+        }
+
+        DB::table('product')->insert([
+
+        ]);
     }
 }
