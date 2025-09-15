@@ -20,6 +20,9 @@ class Controller extends BaseController
     public function index(){
         return view('welcome');
     }
+    public function product(){
+        return view('layouts.layout');
+    }
     public function komentar(){
         $komen = User::all('komentar','id');
         return view('users.komentar', compact('komen'));

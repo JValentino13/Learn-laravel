@@ -222,6 +222,9 @@
     </style>
   </head>
   <body>
+    @extends('layouts.layout')
+    @section('content')
+
     <!-- Page Content -->
     <div class="page-container">
         <!-- Floating Icons -->
@@ -324,5 +327,6 @@
             }
         });
     </script>
+    @endsection
  </body>
   </html>
