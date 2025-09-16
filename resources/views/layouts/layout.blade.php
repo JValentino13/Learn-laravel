@@ -15,7 +15,7 @@
                 <img src="{{ Vite::asset('resources/images/icons/bt.png') }}" />
 
                 <nav class="nav-buttons">
-                    <button><img src="{{ Vite::asset('resources/images/icons/home.png') }}" class="ai-home-alt1"></button>
+                    <button onclick="window.location.href='{{ route('welcome') }}'"><img src="{{ Vite::asset('resources/images/icons/home.png') }}" class="ai-home-alt1"></button>
                     <button><img src="{{ Vite::asset('resources/images/icons/contact.png') }}" class="ai-heart"></button>
                 </nav>
 
@@ -37,7 +37,7 @@
                     <nav class="right-menu">
                         <button><img src="{{ Vite::asset('resources/images/icons/about.png') }}" class="menu-icon"><span>About</span></button>
                         <button><img src="{{ Vite::asset('resources/images/icons/product.png') }}" class="menu-icon"><span>Products</span></button>
-                        <button><img src="{{ Vite::asset('resources/images/icons/rating.png') }}" class="menu-icon"><span>Customers</span></button>
+                        <button onclick="window.location.href='{{ route('komentar') }}'"><img src="{{ Vite::asset('resources/images/icons/rating.png') }}" class="menu-icon"><span>Customers</span></button>
                         <button><img src="{{ Vite::asset('resources/images/icons/service.png') }}" class="menu-icon"><span>Service</span><i class="ai-plus"></i></button>
 
                         <ul class="submenu">
